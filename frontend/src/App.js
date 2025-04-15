@@ -138,7 +138,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/generate-images",
+        "https://ai-image-generator-xccr.onrender.com//generate-images",
         {
           prompt: prompt,
           platform: platform,
@@ -261,7 +261,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/generate-video",
+        "https://ai-image-generator-xccr.onrender.com//generate-video",
         {
           prompt: videoPrompt,
           duration: videoDuration,
@@ -301,7 +301,7 @@ function App() {
   const pollVideoStatus = async (jobId) => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/video-status/${jobId}`
+        `https://ai-image-generator-xccr.onrender.com//video-status/${jobId}`
       );
 
       if (response.data.status === "completed") {
