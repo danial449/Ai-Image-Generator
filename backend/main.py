@@ -194,14 +194,14 @@ async def generate_images(request: PromptRequest):
                 detail=f"Your prompt contains filtered words that are not allowed: {', '.join(filtered_words)}. Please modify your prompt to avoid inappropriate or sensitive content."
             )
 
-        # Use the prompt directly without t-shirt enhancement
-        enhanced_prompt = request.prompt
+        # Use the prompt as is
+        prompt = request.prompt
         
-        print(f"Generating {num_images} images for prompt: {enhanced_prompt} for platform: {request.platform} with style: {request.style_preset}")
+        print(f"Generating {num_images} images for prompt: {prompt} for platform: {request.platform} with style: {request.style_preset}")
         
         tasks = []
         for i in range(num_images):
-            tasks.append(asyncio.to_thread(generate_single_image, enhanced_prompt, i*100, request.platform, request.style_preset))
+            tasks.append(asyncio.to_thread(generate_single_image, prompt, i*100, request.platform, request.style_preset))
         
         # Wait for all images to be generated
         images = []

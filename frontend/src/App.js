@@ -208,9 +208,7 @@ function App() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `tshirt-design-${platform}-${stylePreset}-${
-        index + 1
-      }.png`;
+      link.download = `ai-image-${platform}-${stylePreset}-${index + 1}.png`;
 
       // Trigger download
       document.body.appendChild(link);
@@ -584,7 +582,7 @@ function App() {
           <Box sx={{ display: "flex", justifyContent: "center", my: 4 }}>
             <CircularProgress />
             <Typography variant="body1" sx={{ ml: 2 }}>
-              Generating your designs... This may take a minute.
+              Generating your images... This may take a minute.
             </Typography>
           </Box>
         )}
@@ -604,7 +602,7 @@ function App() {
                     component="img"
                     height={image.platform === "mobile" ? 400 : 300}
                     image={`data:image/png;base64,${image.base64}`}
-                    alt={`Generated design ${index + 1}`}
+                    alt={`Generated image ${index + 1}`}
                     sx={{
                       objectFit:
                         image.platform === "mobile" ? "contain" : "cover",
