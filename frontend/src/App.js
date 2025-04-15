@@ -45,6 +45,7 @@ function App() {
   const [videoPrompt, setVideoPrompt] = useState("");
   const [videoDuration, setVideoDuration] = useState(5);
   const [videoStylePreset, setVideoStylePreset] = useState("photographic");
+  const [setVideoJobId] = useState(null);
   const [videoStatus, setVideoStatus] = useState(null);
   const [videoFrames, setVideoFrames] = useState([]);
   const [videoLoading, setVideoLoading] = useState(false);
