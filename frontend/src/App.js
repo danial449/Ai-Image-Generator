@@ -20,7 +20,6 @@ import {
   Select,
   MenuItem,
   Chip,
-  Divider,
   Paper,
   Tabs,
   Tab,
@@ -46,7 +45,6 @@ function App() {
   const [videoPrompt, setVideoPrompt] = useState("");
   const [videoDuration, setVideoDuration] = useState(5);
   const [videoStylePreset, setVideoStylePreset] = useState("photographic");
-  const [videoJobId, setVideoJobId] = useState(null);
   const [videoStatus, setVideoStatus] = useState(null);
   const [videoFrames, setVideoFrames] = useState([]);
   const [videoLoading, setVideoLoading] = useState(false);
